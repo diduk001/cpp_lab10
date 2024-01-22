@@ -10,6 +10,7 @@ int main() {
         pq_i.push(arr_i[i]);
     }
     std::cout << "Pushed. Size: " << pq_i.size() << std::endl;
+    std::cout << "Queue: " << pq_i << std::endl;
     for (size_t i = 0; i < 5; i++) {
         std::cout << "Popping " << pq_i.peek() << std::endl;
         pq_i.pop();
@@ -25,6 +26,7 @@ int main() {
         pq_d.push(arr_d[i]);
     }
     std::cout << "Pushed. Size: " << pq_d.size() << std::endl;
+    std::cout << "Queue: " << pq_d << std::endl;
     for (int i = 0; i < 5; i++) {
         std::cout << "Popping " << pq_d.peek() << std::endl;
         pq_d.pop();

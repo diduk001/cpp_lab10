@@ -6,6 +6,7 @@
 #define CPP_LAB10_MYPRIORITYQUEUE_HPP
 
 #include <cstddef>
+#include <iostream>
 
 template<typename T>
 class MyPriorityQueue {
@@ -33,6 +34,7 @@ public:
             current = next;
         }
     }
+
     MyPriorityQueue(const MyPriorityQueue &other) : head(NULL), tail(NULL), _size(0) { // Copy constructor
         ListNode *current = other.head;
         while (current != NULL) {
@@ -48,6 +50,15 @@ public:
     T pop();
 
     T peek();
+
+    friend std::ostream &operator<<(std::ostream &os, const MyPriorityQueue<T> &pq) {
+        typename MyPriorityQueue<T>::ListNode *current = pq.head;
+        while (current != NULL) {
+            os << current->value << " ";
+            current = current->next;
+        }
+        return os;
+    }
 };
 
 template<typename T>
@@ -104,6 +115,5 @@ T MyPriorityQueue<T>::pop() {
 
     return value;
 }
-
 
 #endif //CPP_LAB10_MYPRIORITYQUEUE_HPP
